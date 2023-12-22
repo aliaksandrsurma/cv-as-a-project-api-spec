@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: "CV-as-a-project back-end API"
+  description: API to manage data for 'CV-as-a-project'
+  version: "1.0.0"
+paths:
+  /project:
+    get:
+      summary: "Get project details"
+      operationId: getProject
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  subtitle:
+                    type: string
+                  image:
+                    type: string
+                  date:
+                    type: string
+                    format: date
+                  desc:
+                    type: string
+    put:
+      summary: "Update project details"
+      operationId: updateProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                subtitle:
+                  type: string
+                image:
+                  type: string
+                date:
+                  type: string
+                  format: date
+                desc:
+                  type: string
+      responses:
+        '200':
+          description: Successful operation
+    delete:
+      summary: "Delete project"
+      operationId: deleteProject
+      responses:
+        '200':
+          description: Successful operation
