@@ -1,7 +1,7 @@
 const path = require('path')
 
 // Require the framework and instantiate it
-const fastify = require('fastify')({ logger: false });
+const fastify = require('fastify')({ logger: true });
 
 
 fastify.register(require('@fastify/swagger'), {
@@ -20,12 +20,13 @@ fastify.register(require('@fastify/swagger-ui'), {
 
 // Run the server!
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
+const host = '0.0.0.0';
 
 const start = async () => {
   try {
-    await fastify.listen({ port: PORT });
-    console.log(`Server is running on port ${PORT}`);
+    fastify.listen({ port: port, host: host });
+    console.log(`Server is running on port ${port}`);
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
