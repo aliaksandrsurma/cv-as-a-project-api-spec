@@ -1,6 +1,7 @@
 {
+  "name": "cv-as-a-project-api-spec",
   "scripts": {
-    "start": "src/server.js",
+    "start": "node src/server.js",
     "start:dev": "nodemon --config nodemon.json src/server.js"
   },
   "dependencies": {
@@ -11,5 +12,8 @@
     "@fastify/swagger-ui": "^1.10.2",
     "fastify": "^4.25.1",
     "nodemon": "^2.0.20"
+  },
+  "engines": {
+    "node": ">=18.0"
   }
 }
