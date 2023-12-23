@@ -1,7 +1,7 @@
 const path = require('path')
 
 // Require the framework and instantiate it
-const fastify = require('fastify')({ logger: false })
+const fastify = require('fastify')({ logger: false });
 
 
 fastify.register(require('@fastify/swagger'), {
@@ -9,13 +9,13 @@ fastify.register(require('@fastify/swagger'), {
   specification: {
     path: path.join(__dirname, '../swagger/api-specs.yaml')
   }
-})
+});
 
 
 fastify.register(require('@fastify/swagger-ui'), {
   baseDir: path.join(__dirname),
   routePrefix: '/api-spec'
-})
+});
 
 
 // Run the server!
@@ -27,4 +27,4 @@ const start = async () => {
     process.exit(1)
   }
 }
-start()
+start();
