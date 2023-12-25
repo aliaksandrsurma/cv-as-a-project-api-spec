@@ -10,8 +10,11 @@
     "@fastify/static": "^6.12.0",
     "@fastify/swagger": "^8.12.1",
     "@fastify/swagger-ui": "^1.10.2",
-    "fastify": "^4.25.1",
-    "nodemon": "^2.0.20"
+    "fastify": "^4.25.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "semver": "^7.5.4"
   },
   "engines": {
     "node": ">=18.0"
